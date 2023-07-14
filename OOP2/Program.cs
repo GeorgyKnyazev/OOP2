@@ -18,14 +18,14 @@ namespace OOP2
 
     class Player
     {
+        public Player(int positionX, int positionY)
+        {
+            PositionX = positionX;
+            PositionY = positionY;
+        }
+
         public int PositionX { get; private set; }
         public int PositionY { get; private set; }
-
-        public Player(int x, int y)
-        {
-            PositionX = x;
-            PositionY = y;
-        }
     }
 
     class Render
