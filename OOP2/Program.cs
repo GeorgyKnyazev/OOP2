@@ -30,12 +30,12 @@ namespace OOP2
 
     class Renderer
     {
-        public Player Player;
+        Player Player;
 
-        public void DrawPlayer(Player Player)
+        public void DrawPlayer(Player player)
         {
-            Console.SetCursorPosition(Player.PositionX, Player.PositionY);
-            Console.Write(Player.PlayerSimbol);
+            Console.SetCursorPosition(player.PositionX, player.PositionY);
+            Console.Write(player.PlayerSimbol);
         }
     }
 }
