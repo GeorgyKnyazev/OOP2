@@ -16,26 +16,24 @@ namespace OOP2
 
     class Player
     {
-        public Player(int positionX, int positionY, char playerSimbol)
+        public Player(int positionX, int positionY, char simbol)
         {
             PositionX = positionX;
             PositionY = positionY;
-            PlayerSimbol = playerSimbol;
+            Simbol = simbol;
         }
 
         public int PositionX { get; private set; }
         public int PositionY { get; private set; }
-        public char PlayerSimbol { get; private set; }
+        public char Simbol { get; private set; }
     }
 
     class Renderer
-    {
-        Player Player;
-
+    {             
         public void DrawPlayer(Player player)
         {
             Console.SetCursorPosition(player.PositionX, player.PositionY);
-            Console.Write(player.PlayerSimbol);
+            Console.Write(player.Simbol);
         }
     }
 }
