@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OOP2
 {
@@ -8,32 +6,36 @@ namespace OOP2
     {
         static void Main(string[] args)
         {
-            Render render = new Render();
-            Player player = new Player(25, 5);
+            Renderer render = new Renderer();
+            Player player = new Player(25, 5, '#');
 
-            render.DrawPlayer(player.PositionX, player.PositionY , '#');
+            render.DrawPlayer(player);
             Console.ReadKey();
         }
     }
 
     class Player
     {
-        public Player(int positionX, int positionY)
+        public Player(int positionX, int positionY, char playerSimbol)
         {
             PositionX = positionX;
             PositionY = positionY;
+            PlayerSimbol = playerSimbol;
         }
 
         public int PositionX { get; private set; }
         public int PositionY { get; private set; }
+        public char PlayerSimbol { get; private set; }
     }
 
-    class Render
+    class Renderer
     {
-        public void DrawPlayer(int x, int y, char playerChar = '@')
+        public Player Player;
+
+        public void DrawPlayer(Player Player)
         {
-            Console.SetCursorPosition(x, y);
-            Console.Write(playerChar);
+            Console.SetCursorPosition(Player.PositionX, Player.PositionY);
+            Console.Write(Player.PlayerSimbol);
         }
     }
 }
